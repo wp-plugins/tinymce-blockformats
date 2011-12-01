@@ -3,11 +3,11 @@
   Plugin Name: TinyMCE Blockformats
   Plugin URI: http://www.jamiedust.net/
   Description: This plugin allows you to select which elements are used in the formats dropdown on the TinyMCE editor.
-  Version: 1
+  Version: 1.1
   Author: Jamie Woolgar
   Author URI: http://www.jamiedust.net/
   License: GPL2
-  Copyright 2011  Jamie Woolgar  (email : dust@jamiedust.net)
+  Copyright 2011 Jamie Woolgar (email : dust@jamiedust.net)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as 
@@ -51,6 +51,12 @@ function tinymceblockformats_settings (){
 </form>
 </div>
 <?php }
+//uninstall hook
+if ( function_exists('register_uninstall_hook') )
+    register_uninstall_hook(__FILE__, 'tinymceblockformats_uninstall_hook');
+function tinymceblockformats_uninstall_hook() {
+  delete_option('thetinymceblockformats');
+}
 //TinyMCE format replace
 function thetinymceblockformats($init){
   $init['theme_advanced_blockformats'] = ''.get_option('thetinymceblockformats').'';

@@ -4,7 +4,7 @@ Donate link: http://jamiedust.net
 Tags: tinymce, formats, blockformats, editor
 Requires at least: 2.7
 Tested up to: 3.2
-Stable tag: 1.0
+Stable tag: 1.1
 
 This plugin allows you to select which elements are used in the formats dropdown on the TinyMCE editor.
 
